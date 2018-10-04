@@ -7,7 +7,7 @@ compiler:
 
 cache:
   directories:
-    - ./shared/output
+    - ./shared
     
 jobs:
   include:
