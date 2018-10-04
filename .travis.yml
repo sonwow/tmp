@@ -15,6 +15,7 @@ jobs:
       script:
         - pwd
         - ls -al ./shared
+        - rm -rf ./shared/output
         - echo foo | tee > ./output
         - mv ./output ./shared
         - ls -al ./shared/output
