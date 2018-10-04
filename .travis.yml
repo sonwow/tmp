@@ -1,0 +1,24 @@
+sudo: required
+
+# Enable C++ support
+language: cpp
+
+# Compiler selection
+compiler:
+  - gcc
+
+stages:
+  - build
+  - test
+  
+before_install:
+  - mkdir -p ~/shared
+
+jobs:
+  include:
+    - stage: build
+      script: echo foo | tee ~/shared/output
+    - stage: test
+      script: cat ~/shared/output
+    - stage: test
+      script: cat ~/shared/output
