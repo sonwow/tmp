@@ -19,12 +19,12 @@ jobs:
     - stage: build
       script: 
         - echo foo | tee > ~/shared/output
-        - ll ~/shared/*
+        - ls -al ~/shared/*
     - stage: test
       script:
-        - ll ~/shared/*
+        - ls -al ~/shared/*
         - cat ~/shared/output
     - stage: test
       script:
-        - ll ~/shared/*
+        - ls -al ~/shared/*
         - cat ~/shared/output
