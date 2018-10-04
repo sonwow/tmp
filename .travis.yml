@@ -8,6 +8,7 @@ compiler:
 jobs:
   include:
     - stage: build
+      before_install: mkdir -p ~/shared/output
       script:
         - echo foo | tee > ~/shared/output
         - ls -al ~/shared/output
