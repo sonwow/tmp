@@ -12,16 +12,19 @@ cache:
 jobs:
   include:
     - stage: build
+      name: build
       before_install: echo "before_install"
       script:
         - rm -rf ./shared/*
         - echo foo | tee > ./shared/output
         - ls -al ./shared/output
     - stage: test
+      name: test1
       script:
         - ls -al ./shared/*
         - cat ./shared/*
     - stage: test
+      name: test2
       script:
         - ls -al ./shared/*
         - cat ./shared/*
