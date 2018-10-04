@@ -12,12 +12,10 @@ cache:
 jobs:
   include:
     - stage: build
+      before_install: echo "before_install"
       script:
-        - pwd
-        - ls -al ./shared
-        - rm -rf ./shared/output
-        - echo foo | tee > ./output
-        - mv ./output ./shared
+        - rm -rf ./shared/*
+        - echo foo | tee > ./shared/output
         - ls -al ./shared/output
     - stage: test
       script:
