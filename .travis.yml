@@ -5,6 +5,10 @@ language: cpp
 compiler:
   - gcc
 
+cache:
+  directories:
+    - ./shared/output
+    
 jobs:
   include:
     - stage: build
@@ -12,9 +16,6 @@ jobs:
       script:
         - echo foo | tee > ~/shared/output
         - ls -al ~/shared/output
-      cache:
-        directories:
-          - ./shared/output
     - stage: test
       script: ls -al ~/shared/*
     - stage: test
