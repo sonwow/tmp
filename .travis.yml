@@ -12,14 +12,14 @@ cache:
 jobs:
   include:
     - stage: build
-      before_install: mkdir -p ~/shared
+      before_install: mkdir -p ./shared
       script:
-        - echo foo | tee > ~/shared/output
-        - ls -al ~/shared/output
+        - echo foo | tee > ./shared/output
+        - ls -al ./shared/output
     - stage: test
-      script: ls -al ~/shared/*
+      script: ls -al ./shared/*
     - stage: test
-      script: ls -al ~/shared/*
+      script: ls -al ./shared/*
 
 branches:
   only:
