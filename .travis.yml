@@ -17,7 +17,7 @@ before_install:
 jobs:
   include:
     - stage: build
-      script: echo foo | tee ~/shared/output
+      script: echo foo | tee > ~/shared/output
     - stage: test
       script: cat ~/shared/output
     - stage: test
