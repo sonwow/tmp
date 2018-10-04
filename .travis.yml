@@ -14,7 +14,9 @@ jobs:
     - stage: build
       script:
         - pwd
-        - echo foo | tee > ./shared/output
+        - ls -al ./shared
+        - echo foo | tee > ./output
+        - mv ./output ./shared
         - ls -al ./shared/output
     - stage: test
       script:
