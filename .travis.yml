@@ -15,12 +15,11 @@ matrix:
     env: MSG=three
   - name: "four"
     env: MSG=four
-    jobs:
-      include:
-      - name: "four-one"
-        script: echo four-one
-      - name: "four-two"
-        script: echo four-two
+    include:
+    - name: "four-one"
+      script: echo four-one
+    - name: "four-two"
+      script: echo four-two
 
 script:
   - echo $MSG
