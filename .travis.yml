@@ -15,7 +15,16 @@ matrix:
     env: MSG=three
   - name: "four"
     env: MSG=four
-script: echo $MSG
+    matrix:
+      include:
+      - name: "four-one"
+        script: echo four-one
+      - name: "four-two"
+        script: echo four-two
+
+script:
+  - echo $MSG
+  - sleep 60
 
 branches:
   only:
