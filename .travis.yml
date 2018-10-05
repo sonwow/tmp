@@ -15,7 +15,7 @@ matrix:
     env: MSG=three
   - name: "four"
     env: MSG=four
-    matrix:
+    jobs:
       include:
       - name: "four-one"
         script: echo four-one
