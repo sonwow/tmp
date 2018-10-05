@@ -1,5 +1,10 @@
 sudo: required
 
+language: cpp
+
+compiler:
+  - gcc
+
 matrix:
   include:
   - name: "one"
@@ -10,7 +15,7 @@ matrix:
     env: MSG=three
   - name: "four"
     env: MSG=four
-  script: echo $MSG
+script: echo $MSG
 
 branches:
   only:
